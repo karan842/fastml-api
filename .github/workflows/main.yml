@@ -44,7 +44,7 @@ jobs:
         # dockerfile directory
         dockerfile_directory: ./
         # dockerfile_name
-        dockerfile_name: DockerFile
+        dockerfile_name: dockerfile
         # additional options of docker build command
         docker_options: "--no-cache"
 
