@@ -33,7 +33,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build push and release a Docker container to Heroku
-      uses: gonuit/heroku-docker-deploy@v1.3.
+      uses: gonuit/heroku-docker-deploy@v1.3.3
       with: 
         # Below you must provide variables for your Heroku App
         email: ${{ secrets.HEROKU_EMAIL }}
