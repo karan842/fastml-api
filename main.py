@@ -31,9 +31,9 @@ async def predict_banknote(data:BankNote):
     # print(model.predict[[variance, skewness, curtosis, entropy]])
     prediction = model.predict([[variance, skewness, curtosis, entropy]])
     if(prediction[0]>0.5):
-        prediction="Fake Note"
+        prediction="It is a Fake Note"
     else:
-        prediction = "It is a bank note"
+        prediction = "It is a Bank Note"
 
     return {
         'prediction':prediction
