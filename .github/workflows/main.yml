@@ -42,7 +42,7 @@ jobs:
         # Heroku App name
         heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
         # dockerfile directory
-        dockerfile_directory: ../
+        dockerfile_directory: ./
         # dockerfile_name
         dockerfile_name: dockerfile
         # additional options of docker build command
