@@ -32,6 +32,22 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+    - name: Build push and release a Docker container to Heroku
+      uses: gounit/heroku-docker-deplot@v1.3.3
+      with: 
+        # Below you must provide variables for your Heroku App
+        email: ${{ secrets.HEROKU_EMAIL }}
+        # API KEY - Heroku
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        # Heroku App name
+        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+        # dockerfile directory
+        dockerfile_directory: ./
+        # dockerfile_name
+        dockerfile_name: DockerFile
+        # additional options of docker build command
+        docker_options: "--no-cache"
+
+        # Select the process type fpr which you want the docker container to be uploaded
+        # By default, this argument is set to "web".
+        process_type: web
